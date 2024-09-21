@@ -1,5 +1,10 @@
-# Lab0
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
 
+# Lab0
 
 # Фишинг
 
@@ -164,10 +169,10 @@ Booking.com. В 2018 году хакеры рассылали юзерам Whats
 -   К письму прикреплен zip-файл или большое изображение.
 -   Адрес почты вызывает подозрения. Например, организация использует
     адреса в виде <a href="mailto:name@example.com"
-    class="email"><em>name@example.com</em></a>, а письмо пришло с
-    адреса <a href="mailto:name.example@gmail.com"
-    class="email"><em>name.example@gmail.com</em></a>. Либо в имени
-    сотрудника есть опечатки.
+    class="email"><em>[name\@example.com](mailto:name@example.com){.email}</em></a>,
+    а письмо пришло с адреса <a href="mailto:name.example@gmail.com"
+    class="email"><em>[name.example\@gmail.com](mailto:name.example@gmail.com){.email}</em></a>.
+    Либо в имени сотрудника есть опечатки.
 -   Ссылки встроены в текст или сокращены, либо при наведении на ссылку
     отображается другой адрес.
 -   Отправитель пишет с личной электронной почты вместо рабочей.
