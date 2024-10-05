@@ -141,3 +141,8 @@ format:
 
 ![](img/6.png)
 ^*Пример настройки правил для вложений в Microsoft Exchange Online*^
+
+```{r}
+print('Hello World!')
+```
+Это программный код!
