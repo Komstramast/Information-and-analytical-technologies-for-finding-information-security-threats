@@ -1,7 +1,7 @@
 # Введение в R
 
 
-### Произведём запуск задания:
+## Произведём запуск задания:
 
 **\> swirl::swirl()**
 
@@ -76,9 +76,9 @@ connected to the internet, type 0 to exit.)*
 
 **Выбор: 1**
 
-### Теперь запустим подкурсы и выполним их:
+## Теперь запустим подкурсы и выполним их:
 
-#### 1. Базовые структурные блоки (Basic Building Blocks)
+### 1. Базовые структурные блоки (Basic Building Blocks)
 
 *Please choose a lesson, or type 0 to return to course menu.*
 
