@@ -6,8 +6,10 @@
 > swirl::swirl()
 
 | Welcome to swirl! Please sign in. If you’ve been here before, use the
-| same name as you did then. If you are new, call yourself something |
-unique.
+
+| same name as you did then. If you are new, call yourself something
+
+| unique.
 
 What shall I call you? Yaroslav
 
