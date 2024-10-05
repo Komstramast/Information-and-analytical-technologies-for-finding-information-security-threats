@@ -3,32 +3,30 @@
 
 Произведём запуск задания:
 
-> swirl::swirl()
+**\> swirl::swirl()**
 
-| Welcome to swirl! Please sign in. If you’ve been here before, use the
+*|Welcome to swirl! Please sign in. If you’ve been here before, use the*
+*|same name as you did then. If you are new, call yourself something*
+*|unique.*
 
-| same name as you did then. If you are new, call yourself something
+**What shall I call you? Yaroslav**
 
-| unique.
+**Thanks, Yaroslav. Let’s cover a couple of quick housekeeping items
+before we begin our first lesson. First of all, you should know that
+when you see ‘…’, that means you should press Enter when you are done
+reading and ready to continue.**
 
-What shall I call you? Yaroslav
+*… \<– That’s your cue to press Enter to continue*
 
-Thanks, Yaroslav. Let’s cover a couple of quick housekeeping items  
-before we begin our first lesson. First of all, you should know that  
-when you see ‘…’, that means you should press Enter when you are  
-done reading and ready to continue.
+**Also, when you see ‘ANSWER:’, the R prompt (\>), or when you are asked
+to select from a list, that means it’s your turn to enter a response,
+then press Enter to continue.**
 
-… \<– That’s your cue to press Enter to continue
+*Select 1, 2, or 3 and press Enter*
 
-Also, when you see ‘ANSWER:’, the R prompt (\>), or when you are asked  
-to select from a list, that means it’s your turn to enter a response,  
-then press Enter to continue.
+*1: Continue.* *2: Proceed.* *3: Let’s get going!*
 
-Select 1, 2, or 3 and press Enter
-
-1: Continue. 2: Proceed. 3: Let’s get going!
-
-Выбор: 3
+*Выбор: 3*
 
 You can exit swirl and return to the R prompt (\>) at any time by  
 pressing the Esc key. If you are already at the prompt, type bye() to  
