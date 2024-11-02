@@ -816,7 +816,8 @@ setwd(old.dir)
 
 **…**
 
-*\|============================================================================ \| 95%Take nothing but results. Leave nothing but assumptions. That sounds like ‘Take nothing but pictures. Leave nothing but footprints.’ But it makes no sense! Surely our readers can come up with a better motto . . .*
+*\|============================================================================ \| 95%*
+*Take nothing but results. Leave nothing but assumptions. That sounds like ‘Take nothing but pictures. Leave nothing but footprints.’ But it makes no sense! Surely our readers can come up with a better motto . . .*
 
 **…**
 
