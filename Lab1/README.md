@@ -695,9 +695,9 @@ file.info("mytest.R")
 
 ```         
          size isdir mode               mtime               ctime
-mytest.R    0 FALSE  666 2024-11-02 16:47:03 2024-11-02 16:47:03
+mytest.R    0 FALSE  666 2024-11-05 13:27:41 2024-11-05 13:27:41
                        atime exe
-mytest.R 2024-11-02 16:47:03  no
+mytest.R 2024-11-05 13:27:41  no
 ```
 
 *Excellent job!*
@@ -1078,3 +1078,576 @@ rep(c(0, 1, 2), each = 10)
 *You got it right!*
 
 *\|===============================================================================\| 100%*
+
+### 4. Векторы (Vectors)
+
+*\| \| 0%*
+
+*The simplest and most common data structure in R is the vector.*
+
+**…**
+
+*\|== \| 3%*
+
+*Vectors come in two different flavors: atomic vectors and lists. An atomic vector contains exactly one data type, whereas a list may contain multiple data types. We’ll explore atomic vectors further before we get to lists.*
+
+**…**
+
+*\|==== \| 5%*
+
+*In previous lessons, we dealt entirely with numeric vectors, which are one type of atomic vector. Other types of atomic vectors include logical, character, integer, and complex. In this lesson, we’ll take a closer look at logical and character vectors.*
+
+**…**
+
+*\|====== \| 8%*
+
+*Logical vectors can contain the values TRUE, FALSE, and NA (for ‘not available’). These values are generated as the result of logical ‘conditions’. Let’s experiment with some simple conditions.*
+
+**…**
+
+*\|======== \| 11%*
+
+*First, create a numeric vector num_vect that contains the values 0.5, 55, -10, and 6.*
+
+``` r
+num_vect <- c(0.5, 55, -10, 6)
+```
+
+*You’re the best!*
+
+*\|========== \| 13%*
+
+*Now, create a variable called tf that gets the result of num_vect \< 1, which is read as ‘num_vect is less than 1’.*
+
+``` r
+tf <- num_vect < 1
+```
+
+*All that practice is paying off!*
+
+*\|============ \| 16%*
+
+*What do you think tf will look like?*
+
+**1: a single logical value**
+
+**2: a vector of 4 logical values**
+
+**Выбор: 2**
+
+*All that practice is paying off!*
+
+*\|=============== \| 18%*
+
+*Print the contents of tf now.*
+
+``` r
+tf
+```
+
+```         
+[1]  TRUE FALSE  TRUE FALSE
+```
+
+*All that hard work is paying off!*
+
+*\|================= \| 21%*
+
+*The statement num_vect \< 1 is a condition and tf tells us whether each corresponding element of our numeric vector num_vect satisfies this condition.*
+
+**…**
+
+*\|=================== \| 24%*
+
+*The first element of num_vect is 0.5, which is less than 1 and therefore the statement 0.5 \< 1 is TRUE. The second element of num_vect is 55, which is greater than 1, so the statement 55 \< 1 is FALSE. The same logic applies for the third and fourth elements.*
+
+**…**
+
+*\|===================== \| 26%*
+
+*Let’s try another. Type num_vect \>= 6 without assigning the result to a new variable.*
+
+``` r
+num_vect >= 6
+```
+
+```         
+[1] FALSE  TRUE FALSE  TRUE
+```
+
+*You’re the best!*
+
+*\|======================= \| 29%*
+
+*This time, we are asking whether each individual element of num_vect is greater than OR equal to 6. Since only 55 and 6 are greater than or equal to 6, the second and fourth elements of the result are TRUE and the first and third elements are FALSE.*
+
+**…**
+
+*\|========================= \| 32%*
+
+*The `<` and `>=` symbols in these examples are called ‘logical operators’. Other logical operators include `>`, `<=`, `==` for exact equality, and `!=` for inequality.*
+
+**…**
+
+*\|=========================== \| 34%*
+
+*If we have two logical expressions, A and B, we can ask whether at least one is TRUE with A \| B (logical ‘or’ a.k.a. ‘union’) or whether they are both TRUE with A & B (logical ‘and’ a.k.a. ‘intersection’). Lastly, !A is the negation of A and is TRUE when A is FALSE and vice versa.*
+
+**…**
+
+*\|============================= \| 37%*
+
+*It’s a good idea to spend some time playing around with various combinations of these logical operators until you get comfortable with their use. We’ll do a few examples here to get you started.*
+
+**…**
+
+*\|=============================== \| 39%*
+
+*Try your best to predict the result of each of the following statements. You can use pencil and paper to work them out if it’s helpful. If you get stuck, just guess and you’ve got a 50% chance of getting the right answer!*
+
+**…**
+
+*\|================================= \| 42%*
+
+*(3 \> 5) & (4 == 4)*
+
+**1: TRUE**
+
+**2: FALSE**
+
+**Выбор: 2**
+
+*You are amazing!*
+
+*\|=================================== \| 45%*
+
+*(TRUE == TRUE) \| (TRUE == FALSE)*
+
+**1: TRUE**
+
+**2: FALSE**
+
+**Выбор: 1**
+
+*You are really on a roll!*
+
+*\|===================================== \| 47%*
+
+*((111 \>= 111) \| !(TRUE)) & ((4 + 1) == 5)*
+
+**1: FALSE**
+
+**2: TRUE**
+
+**Выбор: 2**
+
+*You got it!*
+
+*\|======================================== \| 50%*
+
+*Don’t worry if you found these to be tricky. They’re supposed to be. Working with logical statements in R takes practice, but your efforts will be rewarded in future lessons (e.g. subsetting and control structures).*
+
+**…**
+
+*\|========================================== \| 53%*
+
+*Character vectors are also very common in R. Double quotes are used to distinguish character objects, as in the following example.*
+
+**…**
+
+*\|============================================ \| 55%*
+
+*Create a character vector that contains the following words: “My”, “name”, “is”. Remember to enclose each word in its own set of double quotes, so that R knows they are character strings. Store the vector in a variable called my_char.*
+
+``` r
+my_char <- c("My", "name", "is")
+```
+
+*You are quite good my friend!*
+
+*\|============================================== \| 58%*
+
+*Print the contents of my_char to see what it looks like.*
+
+``` r
+my_char
+```
+
+```         
+[1] "My"   "name" "is"  
+```
+
+*You are amazing!*
+
+*\|================================================ \| 61%*
+
+*Right now, my_char is a character vector of length 3. Let’s say we want to join the elements of my_char together into one continuous character string (i.e. a character vector of length 1). We can do this using the paste() function.*
+
+**…**
+
+*\|================================================== \| 63%*
+
+*Type paste(my_char, collapse = ” “) now. Make sure there’s a space between the double quotes in the `collapse` argument. You’ll see why in a second.*
+
+``` r
+paste(my_char, collapse = " ")
+```
+
+```         
+[1] "My name is"
+```
+
+*Excellent work!*
+
+*\|==================================================== \| 66%*
+
+*The `collapse` argument to the paste() function tells R that when we join together the elements of the my_char character vector, we’d like to separate them with single spaces.*
+
+**…**
+
+*\|====================================================== \| 68%*
+
+*It seems that we’re missing something…. Ah, yes! Your name!*
+
+**…**
+
+*\|======================================================== \| 71%*
+
+*To add (or ‘concatenate’) your name to the end of my_char, use the c() function like this: c(my_char, “your_name_here”). Place your name in double quotes where I’ve put “your_name_here”. Try it now, storing the result in a new variable called my_name.*
+
+``` r
+my_name <- c(my_char, "Swirl")
+```
+
+*You’re the best!*
+
+*\|========================================================== \| 74%*
+
+*Take a look at the contents of my_name.*
+
+``` r
+my_name
+```
+
+```         
+[1] "My"    "name"  "is"    "Swirl"
+```
+
+*You are doing so well!*
+
+*\|============================================================ \| 76%*
+
+*Now, use the paste() function once more to join the words in my_name together into a single character string. Don’t forget to say collapse = ” “!*
+
+``` r
+paste(my_name, collapse = " ")
+```
+
+```         
+[1] "My name is Swirl"
+```
+
+*You got it!*
+
+*\|============================================================== \| 79%*
+
+*In this example, we used the paste() function to collapse the elements of a single character vector. paste() can also be used to join the elements of multiple character vectors.*
+
+**…**
+
+*\|================================================================ \| 82%*
+
+*In the simplest case, we can join two character vectors that are each of length 1 (i.e. join two words). Try paste(“Hello”, “world!”, sep = ” “), where the `sep` argument tells R that we want to separate the joined elements with a single space.*
+
+``` r
+paste("Hello", "world!", sep = " ")
+```
+
+```         
+[1] "Hello world!"
+```
+
+*You are doing so well!*
+
+*\|=================================================================== \| 84%*
+
+*For a slightly more complicated example, we can join two vectors, each of length 3. Use paste() to join the integer vector 1:3 with the character vector c(“X”, “Y”, “Z”). This time, use sep = “” to leave no space between the joined elements.*
+
+``` r
+paste(1:3, c("X", "Y", "Z"), sep = "")
+```
+
+```         
+[1] "1X" "2Y" "3Z"
+```
+
+*You are amazing!*
+
+*\|===================================================================== \| 87%*
+
+*What do you think will happen if our vectors are of different length? (Hint: we talked about this in a previous lesson.)*
+
+**…**
+
+*\|======================================================================= \| 89%*
+
+*Vector recycling! Try paste(LETTERS, 1:4, sep = “-”), where LETTERS is a predefined variable in R containing a character vector of all 26 letters in the English alphabet.*
+
+``` r
+paste(LETTERS, 1:4, sep = "-")
+```
+
+```         
+ [1] "A-1" "B-2" "C-3" "D-4" "E-1" "F-2" "G-3" "H-4" "I-1" "J-2" "K-3" "L-4"
+[13] "M-1" "N-2" "O-3" "P-4" "Q-1" "R-2" "S-3" "T-4" "U-1" "V-2" "W-3" "X-4"
+[25] "Y-1" "Z-2"
+```
+
+*Your dedication is inspiring!*
+
+*\|========================================================================= \| 92%*
+
+*Since the character vector LETTERS is longer than the numeric vector 1:4, R simply recycles, or repeats, 1:4 until it matches the length of LETTERS.*
+
+**…**
+
+*\|=========================================================================== \| 95%*
+
+*Also worth noting is that the numeric vector 1:4 gets ‘coerced’ into a character vector by the paste() function.*
+
+**…**
+
+*\|============================================================================= \| 97%*
+
+*We’ll discuss coercion in another lesson, but all it really means is that the numbers 1, 2, 3, and 4 in the output above are no longer numbers to R, but rather characters “1”, “2”, “3”, and “4”.*
+
+**…**
+
+*\|===============================================================================\| 100%*
+
+### 5. Пропущенные значения (Missing Values)
+
+*\| \| 0%*
+
+*Missing values play an important role in statistics and data analysis. Often, missing values must not be ignored, but rather they should be carefully studied to see if there’s an underlying pattern or cause for their missingness.*
+
+**…**
+
+*\|==== \| 5%*
+
+*In R, NA is used to represent any value that is ‘not available’ or ‘missing’ (in the statistical sense). In this lesson, we’ll explore missing values further.*
+
+**…**
+
+*\|======== \| 10%*
+
+*Any operation involving NA generally yields NA as the result. To illustrate, let’s create a vector c(44, NA, 5, NA) and assign it to a variable x.*
+
+``` r
+x <- c(44, NA, 5, NA)
+```
+
+*That’s correct!*
+
+*\|============ \| 15%*
+
+*Now, let’s multiply x by 3.*
+
+``` r
+x * 3
+```
+
+```         
+[1] 132  NA  15  NA
+```
+
+*You got it!*
+
+*\|================ \| 20%*
+
+*Notice that the elements of the resulting vector that correspond with the NA values in x are also NA.*
+
+**…**
+
+*\|==================== \| 25%*
+
+*To make things a little more interesting, lets create a vector containing 1000 draws from a standard normal distribution with y \<- rnorm(1000).*
+
+``` r
+y <- rnorm(1000)
+```
+
+*Excellent work!*
+
+*\|======================== \| 30%*
+
+*Next, let’s create a vector containing 1000 NAs with z \<- rep(NA, 1000).*
+
+``` r
+z <- rep(NA, 1000)
+```
+
+*You nailed it! Good job!*
+
+*\|============================ \| 35%*
+
+*Finally, let’s select 100 elements at random from these 2000 values (combining y and z) such that we don’t know how many NAs we’ll wind up with or what positions they’ll occupy in our final vector – my_data \<- sample(c(y, z), 100).*
+
+``` r
+my_data <- sample(c(y, z), 100)
+```
+
+*Great job!*
+
+*\|================================ \| 40%*
+
+*Let’s first ask the question of where our NAs are located in our data. The is.na() function tells us whether each element of a vector is NA. Call is.na() on my_data and assign the result to my_na.*
+
+``` r
+my_na <- is.na(my_data)
+```
+
+*That’s the answer I was looking for.*
+
+*\|==================================== \| 45%*
+
+*Now, print my_na to see what you came up with.*
+
+``` r
+my_na
+```
+
+```         
+  [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE
+ [13] FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
+ [25] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE
+ [37]  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE
+ [49] FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE  TRUE
+ [61]  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE FALSE
+ [73]  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE
+ [85]  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
+ [97] FALSE FALSE  TRUE FALSE
+```
+
+*Keep working like that and you’ll get there!*
+
+*\|======================================== \| 50% \|*
+
+*Everywhere you see a TRUE, you know the corresponding element of my_data is NA. Likewise, everywhere you see a FALSE, you know the corresponding element of my_data is one of our random draws from the standard normal distribution.*
+
+**…**
+
+*\|============================================= \| 55%*
+
+*In our previous discussion of logical operators, we introduced the `==` operator as a method of testing for equality between two objects. So, you might think the expression my_data == NA yields the same results as is.na(). Give it a try.*
+
+``` r
+my_data == NA
+```
+
+```         
+  [1] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+ [26] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+ [51] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+ [76] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+```
+
+*That’s the answer I was looking for.*
+
+*\|================================================= \| 60%*
+
+*The reason you got a vector of all NAs is that NA is not really a value, but just a placeholder for a quantity that is not available. Therefore the logical expression is incomplete and R has no choice but to return a vector of the same length as my_data that contains all NAs.*
+
+**…**
+
+*\|===================================================== \| 65%*
+
+*Don’t worry if that’s a little confusing. The key takeaway is to be cautious when using logical expressions anytime NAs might creep in, since a single NA value can derail the entire thing.*
+
+**…**
+
+*\|========================================================= \| 70%*
+
+*So, back to the task at hand. Now that we have a vector, my_na, that has a TRUE for every NA and FALSE for every numeric value, we can compute the total number of NAs in our data.*
+
+**…**
+
+*\|============================================================= \| 75%*
+
+*The trick is to recognize that underneath the surface, R represents TRUE as the number 1 and FALSE as the number 0. Therefore, if we take the sum of a bunch of TRUEs and FALSEs, we get the total number of TRUEs.*
+
+**…**
+
+*\|================================================================= \| 80%*
+
+*Let’s give that a try here. Call the sum() function on my_na to count the total number of TRUEs in my_na, and thus the total number of NAs in my_data. Don’t assign the result to a new variable.*
+
+``` r
+sum(my_na)
+```
+
+```         
+[1] 48
+```
+
+*You got it!*
+
+*\|===================================================================== \| 85%*
+
+*Pretty cool, huh? Finally, let’s take a look at the data to convince ourselves that everything ‘adds up’. Print my_data to the console.*
+
+``` r
+my_data
+```
+
+```         
+  [1]          NA          NA          NA          NA          NA          NA
+  [7]          NA  1.23980581          NA          NA          NA -1.13616012
+ [13] -0.19076823          NA          NA -1.68508975          NA          NA
+ [19]  0.36493327          NA          NA          NA          NA          NA
+ [25] -0.54404683 -1.03149882  0.52684114  0.64349399 -0.50271650 -0.31504024
+ [31] -0.86772285          NA -1.48971337          NA -0.29943080  0.91402887
+ [37]          NA  0.27573988          NA          NA  2.02445320 -1.16623589
+ [43]          NA          NA  0.05900477 -0.39940997          NA -0.46136106
+ [49] -0.82917540          NA          NA -0.16934064  0.52237454 -0.12960184
+ [55]  0.83227257          NA          NA  0.09921700 -1.01316512          NA
+ [61]          NA  2.09330075          NA -0.10491787  0.28689696  0.14851078
+ [67] -0.60709743          NA -0.30290893          NA          NA  0.73025035
+ [73]          NA -1.43758906 -0.47251740  1.32624639  0.86472969          NA
+ [79] -0.06159245 -1.08394034 -1.53160925          NA  0.81224293 -0.51990774
+ [85]          NA -1.07647829          NA          NA -1.02924270 -0.74615159
+ [91]  1.11879974          NA          NA          NA          NA -0.35525222
+ [97] -1.09904212  1.04622339          NA  0.39049567
+```
+
+*You are doing so well!*
+
+*\|========================================================================= \| 90%*
+
+*Now that we’ve got NAs down pat, let’s look at a second type of missing value – NaN, which stands for ‘not a number’. To generate NaN, try dividing (using a forward slash) 0 by 0 now.*
+
+``` r
+0/0
+```
+
+```         
+[1] NaN
+```
+
+*All that hard work is paying off!*
+
+*\|============================================================================= \| 95%*
+
+*Let’s do one more, just for fun. In R, Inf stands for infinity. What happens if you subtract Inf from Inf?*
+
+``` r
+Inf - Inf
+```
+
+```         
+[1] NaN
+```
+
+*Nice work!*
+
+*\|=================================================================================\| 100%*
