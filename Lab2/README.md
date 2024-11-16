@@ -105,3 +105,31 @@ starwars %>% arrange(desc(height)) %>% head(1) %>% select(name)
       name       
       <chr>      
     1 Yarael Poof
+
+### Шаг №6:
+
+Найти всех персонажей ниже 170.
+
+``` r
+starwars %>% filter(height < 170) %>% select(name)
+```
+
+    # A tibble: 22 × 1
+       name                 
+       <chr>                
+     1 C-3PO                
+     2 R2-D2                
+     3 Leia Organa          
+     4 Beru Whitesun Lars   
+     5 R5-D4                
+     6 Yoda                 
+     7 Mon Mothma           
+     8 Wicket Systri Warrick
+     9 Nien Nunb            
+    10 Watto                
+    # ℹ 12 more rows
+
+### Шаг №7:
+
+Подсчитать ИМТ (индекс массы тела) для всех персонажей. ИМТ подсчитать
+по формуле 𝐼 = 𝑚 / ℎ ^ 2, где 𝑚 – масса (weight), а ℎ – рост (height).
