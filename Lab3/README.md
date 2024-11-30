@@ -197,29 +197,79 @@ flights %>% filter(origin == "JFK", month == 5) %>% nrow()
 -   Какой самый северный аэропорт?
 
 ``` r
-airports %>% arrange(desc(lon)) %>% slice(1)
+airports %>% arrange(desc(lat)) %>% slice(1)
 ```
 
     # A tibble: 1 × 8
-      faa   name           lat   lon   alt    tz dst   tzone            
-      <chr> <chr>        <dbl> <dbl> <dbl> <dbl> <chr> <chr>            
-    1 SYA   Eareckson As  52.7  174.    98    -9 A     America/Anchorage
+      faa   name                      lat   lon   alt    tz dst   tzone
+      <chr> <chr>                   <dbl> <dbl> <dbl> <dbl> <chr> <chr>
+    1 EEN   Dillant Hopkins Airport  72.3  42.9   149    -5 A     <NA> 
+
+-   Какой аэропорт самый высокогорный (находится выше всех над уровнем
+    моря)?
+
+``` r
+airports %>% arrange(desc(alt)) %>% slice(1)
+```
+
+    # A tibble: 1 × 8
+      faa   name        lat   lon   alt    tz dst   tzone         
+      <chr> <chr>     <dbl> <dbl> <dbl> <dbl> <chr> <chr>         
+    1 TEX   Telluride  38.0 -108.  9078    -7 A     America/Denver
+
+-   Какие бортовые номера у самых старых самолетов?
+
+``` r
+airports %>% arrange(desc(lat)) %>% slice(1)
+```
+
+    # A tibble: 1 × 8
+      faa   name                      lat   lon   alt    tz dst   tzone
+      <chr> <chr>                   <dbl> <dbl> <dbl> <dbl> <chr> <chr>
+    1 EEN   Dillant Hopkins Airport  72.3  42.9   149    -5 A     <NA> 
+
+-   Какая средняя температура воздуха была в сентябре в аэропорту John F
+    Kennedy Intl (в градусах Цельсия).
+
+``` r
+weather %>% filter(origin == "JFK", month == 9) %>% summarise(avg_temp = mean((temp - 32) * 5 / 9, na.rm = TRUE))
+```
+
+    # A tibble: 1 × 1
+      avg_temp
+         <dbl>
+    1     19.4
+
+-   Самолеты какой авиакомпании совершили больше всего вылетов в июне?
+
+``` r
+b<- flights %>% filter(month == 6) %>% group_by(carrier) %>% summarise("coun"=n()) %>% arrange(desc(coun)) %>% slice(1) %>% select(carrier)
+airlines %>% filter(carrier == b$carrier) %>% select(name)
+```
+
+    # A tibble: 1 × 1
+      name                 
+      <chr>                
+    1 United Air Lines Inc.
+
+-   Самолеты какой авиакомпании задерживались чаще других в 2013 году?
+
+``` r
+c<- flights %>% filter(arr_delay > 0 & year == 2013) %>% group_by(carrier) %>% summarise("coun"=n()) %>% arrange(desc(coun)) %>% slice(1) %>% select(carrier)
+airlines %>% filter(carrier == c$carrier) %>% select(name)
+```
+
+    # A tibble: 1 × 1
+      name                    
+      <chr>                   
+    1 ExpressJet Airlines Inc.
 
 ## Оценка результата
 
-Были использованы знания
-функций `select(), filter(), mutate(), arrange(), group_by()` для
-решения практических задач.
+В результате работы была скачан пакет nycflights13 и были выполнены
+задания с использованием наборов данных.
 
 ## Вывод
 
-В результате выполнения работы были:
-
--   развиты практические навыки использования языка программирования R
-    для обработки данных
-
--   закреплены знания базовых типов данных языка R
-
--   развиты практические навыки использования функций обработки данных
-    пакета `dplyr` – функции
-    `select(), filter(), mutate(), arrange(), group_by()`
+В результате выполненной работы был скачан пакет nycflights13 и были
+выполнены задания с использованием наборов данных.
