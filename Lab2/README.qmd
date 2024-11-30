@@ -1,5 +1,5 @@
 ---
-title: "Основы обработки данных с помощью R и Dplyr"
+title: "Основы обработки данных с помощью R и Dplyr №1"
 format: 
   md:
     output-file: README.md
