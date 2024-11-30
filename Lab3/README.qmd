@@ -103,6 +103,34 @@ list(
   weather = ncol(weather))
 ```
 
+-   Как просмотреть примерный вид датафрейма?
+
+```{r}
+planes %>% glimpse()
+```
+
+-   Сколько компаний-перевозчиков (carrier) учитывают эти наборы данных (представлено в наборах данных)?
+
+```{r}
+airlines %>%
+  select(carrier) %>%
+  unique() %>%
+  filter(!is.na(carrier)) %>%
+  nrow()
+```
+
+-    Сколько рейсов принял аэропорт John F Kennedy Intl в мае?
+
+```{r}
+flights %>% filter(origin == "JFK", month == 5) %>% nrow()
+```
+
+-   Какой самый северный аэропорт?
+
+```{r}
+airports %>% arrange(desc(lon)) %>% slice(1)
+```
+
 ## Оценка результата
 
 Были использованы знания функций `select(), filter(), mutate(), arrange(), group_by()` для решения практических задач.
