@@ -53,6 +53,14 @@
 
 ![](images/clipboard-1942226529.png)
 
+![](images/clipboard-111927664.png)
+
+![](images/clipboard-173435904.png)
+
+![](images/clipboard-4291226883.png)
+
+![](images/clipboard-1339792188.png)
+
 ## Оценка результата
 
 В результате работы была скачан пакет nycflights13 и были выполнены
