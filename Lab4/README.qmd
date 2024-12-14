@@ -1,5 +1,5 @@
 ---
-title: "Основы обработки данных с помощью R и Dplyr №2"
+title: "Использование технологии Yandex Query для анализа данных сетевой активности"
 format: 
   md:
     output-file: README.md
