@@ -79,7 +79,9 @@ DataLens.
 
 В параметре Traffic представлена следующая функция на языке SQL:
 
-`IF (([dst] LIKE '12.%' OR [dst] LIKE '13.%' OR [dst] LIKE '14.%') AND ([src] LIKE '12.%' OR [src] LIKE '13.%' OR [src] LIKE '14.%')) THEN "Внутренний трафик" ELSE "Внешний трафик" END`
+``` r
+#IF (([dst] LIKE '12.%' OR [dst] LIKE '13.%' OR [dst] LIKE '14.%') AND ([src] LIKE '12.%' OR [src] LIKE '13.%' OR [src] LIKE '14.%')) THEN "Внутренний трафик" ELSE "Внешний трафик" END
+```
 
 В параметре ПОКАЗАТЕЛИ и ПОДПИСИ представлено количество байт
 передаваемого трафика.
@@ -95,7 +97,9 @@ DataLens.
 трафика, а в качетве пареметров X и ЦВЕТА представлена следующая функция
 на языке SQL:
 
-`IF (([src] LIKE '12.%' OR [src] LIKE '13.%' OR [src] LIKE '14.%') AND (NOT([dst] LIKE '12.%' OR [dst] LIKE '13.%' OR [dst] LIKE '14.%'))) THEN "Исходящий трафик" ELSEIF (([dst] LIKE '12.%' OR [dst] LIKE '13.%' OR [dst] LIKE '14.%') AND (NOT([src] LIKE '12.%' OR [src] LIKE '13.%' OR [src] LIKE '14.%'))) THEN "Входящий трафик" END`
+``` r
+#IF (([src] LIKE '12.%' OR [src] LIKE '13.%' OR [src] LIKE '14.%') AND (NOT([dst] LIKE '12.%' OR [dst] LIKE '13.%' OR [dst] LIKE '14.%'))) THEN "Исходящий трафик" ELSEIF (([dst] LIKE '12.%' OR [dst] LIKE '13.%' OR [dst] LIKE '14.%') AND (NOT([src] LIKE '12.%' OR [src] LIKE '13.%' OR [src] LIKE '14.%'))) THEN "Входящий трафик" END
+```
 
 -   Построен график активности (линейная диаграмма) объема трафика во
     времени.
@@ -110,7 +114,9 @@ DataLens.
 качетве пареметров X и ЦВЕТА и ФОРМЫ представлена следующая функция на
 языке SQL:
 
-`IF (([src] LIKE '12.%' OR [src] LIKE '13.%' OR [src] LIKE '14.%') AND (NOT([dst] LIKE '12.%' OR [dst] LIKE '13.%' OR [dst] LIKE '14.%'))) THEN "Исходящий трафик" ELSEIF (([dst] LIKE '12.%' OR [dst] LIKE '13.%' OR [dst] LIKE '14.%') AND (NOT([src] LIKE '12.%' OR [src] LIKE '13.%' OR [src] LIKE '14.%'))) THEN "Входящий трафик" ELSE "Остальной трафик" END`
+``` r
+#IF (([src] LIKE '12.%' OR [src] LIKE '13.%' OR [src] LIKE '14.%') AND (NOT([dst] LIKE '12.%' OR [dst] LIKE '13.%' OR [dst] LIKE '14.%'))) THEN "Исходящий трафик" ELSEIF (([dst] LIKE '12.%' OR [dst] LIKE '13.%' OR [dst] LIKE '14.%') AND (NOT([src] LIKE '12.%' OR [src] LIKE '13.%' OR [src] LIKE '14.%'))) THEN "Входящий трафик" ELSE "Остальной трафик" END
+```
 
 -   Все построенные графики выведены в виде единого дашборда в Yandex
     DataLens.
@@ -118,6 +124,9 @@ DataLens.
 ![](images/clipboard-1635440676.png)
 
 ![](images/clipboard-3708612467.png)
+
+Ссылка на дашборд:
+<https://datalens.yandex.cloud/pbzuzhcmwx6sc-dashbort-yaroslav>
 
 ## Оценка результата
 
